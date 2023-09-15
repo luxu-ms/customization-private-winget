@@ -4,6 +4,8 @@ hostInformation: general_i_8c32gb256ssd_v2
 supportsHibernation: false
 setupTasks:
   - task: customized
+    inputs:
+      localRepoURL: 'https://demodeploy4.azurewebsites.net/api'
   - task: winget
     inputs:
       package: 'notepad++'

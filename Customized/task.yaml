@@ -1,2 +1,9 @@
 name: customized
-command: './main.ps1'
+command: './main.ps1 -LocalRepoURL {{localRepoURL}}'
+inputs:
+  localRepoURL:
+    defaultValue: ''
+    type: 'string'
+    required: false
+    description: | 
+      Use the private winget repository. 
