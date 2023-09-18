@@ -9,5 +9,5 @@ setupTasks:
       runAsUser: true
   - task: winget
     inputs:
-      package: 'notepad++'
+      package: 'Notepad++.Notepad++'
       runAsUser: true
