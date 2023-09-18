@@ -12,12 +12,12 @@ if($RunAsUser -eq "true") {
     if(!(Test-Path -Path $CustomizationScriptsDir)){
         New-Item $CustomizationScriptsDir -type directory
     }
-    Add-Content -Path $RunAsUserScriptPath -Value "winget source remove -n=winget
-    winget source remove -n=msstore
-    winget source add --name WinGetRest $LocalRepoURL -t Microsoft.Rest"
+    Add-Content -Path $RunAsUserScriptPath -Value "Remove-WinGetSource winget
+    Remove-WinGetSource msstore
+    Add-WinGetSource -Name WinGetRest -Argument $LocalRepoURL -Type Microsoft.Rest"
     
 }else{
-    winget source remove -n=winget
-    winget source remove -n=msstore
-    winget source add --name WinGetRest $LocalRepoURL -t Microsoft.Rest 
+    Remove-WinGetSource winget
+    Remove-WinGetSource msstore
+    Add-WinGetSource -Name WinGetRest -Argument $LocalRepoURL -Type Microsoft.Rest
 }
